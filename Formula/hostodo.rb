@@ -5,12 +5,12 @@
 class Hostodo < Formula
   desc "Official CLI for managing Hostodo VPS instances"
   homepage "https://github.com/hostodo/cli"
-  version "0.1.3"
+  version "0.1.4"
   license "MIT"
 
   on_macos do
-    url "https://github.com/hostodo/cli/releases/download/v0.1.3/cli_0.1.3_Darwin_all.tar.gz"
-    sha256 "a740c7370905795fcdbccb51524b2fbb4b2505b32f155ba720415963969ade74"
+    url "https://github.com/hostodo/cli/releases/download/v0.1.4/cli_0.1.4_Darwin_all.tar.gz"
+    sha256 "960a4541724b74c9e2dc1adf35bbbc5f52ad70b15a72fc679f3ee2aa7fd22531"
 
     def install
       bin.install "hostodo"
@@ -19,15 +19,15 @@ class Hostodo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hostodo/cli/releases/download/v0.1.3/cli_0.1.3_Linux_x86_64.tar.gz"
-      sha256 "be6ebf331791aa81e63b0185d8b174af3b821c6291d586cc653ca75c7df2ebc8"
+      url "https://github.com/hostodo/cli/releases/download/v0.1.4/cli_0.1.4_Linux_x86_64.tar.gz"
+      sha256 "16ee6476321f6ce1962911cf099bef7c5ef33a3d824c8a0365a281b7d601932b"
       def install
         bin.install "hostodo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hostodo/cli/releases/download/v0.1.3/cli_0.1.3_Linux_arm64.tar.gz"
-      sha256 "e294f041b6aef128efb88ef7a319403ce2ed197a66ed1d2a8649b6ff65c69dcf"
+      url "https://github.com/hostodo/cli/releases/download/v0.1.4/cli_0.1.4_Linux_arm64.tar.gz"
+      sha256 "e85d2c61ed09b3c30168ddbe0e86eae9e5e17a6c7d60647b3bec8f0ebc9bdf96"
       def install
         bin.install "hostodo"
       end
