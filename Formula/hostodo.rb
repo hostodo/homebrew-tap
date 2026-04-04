@@ -10,7 +10,7 @@ class Hostodo < Formula
 
   on_macos do
     url "https://github.com/hostodo/cli/releases/download/v1.2.1/cli_1.2.1_Darwin_all.tar.gz"
-    sha256 "b7ab23c0bed453a2bba3e098d9b4f7e67ad16e62e298dfb4f56f4547279fcb5d"
+    sha256 "0d83d4239350f33621d24c290dc1b709f71701f748d8668187dea3ae6cdfe965"
 
     define_method(:install) do
       bin.install "hostodo"
@@ -20,14 +20,14 @@ class Hostodo < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/hostodo/cli/releases/download/v1.2.1/cli_1.2.1_Linux_x86_64.tar.gz"
-      sha256 "f5d6d5869d38eab2761815a686eacb7501eb5c2cca4413a9feb1c0d28e273ef9"
+      sha256 "d904b432ede884fbdb9155c42ce042e578f5384b21984684c1b907952c83b531"
       define_method(:install) do
         bin.install "hostodo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/hostodo/cli/releases/download/v1.2.1/cli_1.2.1_Linux_arm64.tar.gz"
-      sha256 "dde6abc00fb79b491878333f917a9ae8882127ca452f12bc2242dd751a3df07d"
+      sha256 "bab0a16fa1e9df927ca9a9094ac74472b52e945bc2942e0ff93044479e64b4df"
       define_method(:install) do
         bin.install "hostodo"
       end
