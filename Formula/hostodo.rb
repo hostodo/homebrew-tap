@@ -5,12 +5,12 @@
 class Hostodo < Formula
   desc "Official CLI for managing Hostodo VPS instances"
   homepage "https://github.com/hostodo/cli"
-  version "1.1.1"
+  version "1.2.0"
   license "MIT"
 
   on_macos do
-    url "https://github.com/hostodo/cli/releases/download/v1.1.1/cli_1.1.1_Darwin_all.tar.gz"
-    sha256 "1aa2bfe6a6a84629bff1c326aa69f4398f6839c596102ae18eff82cd5247a0ac"
+    url "https://github.com/hostodo/cli/releases/download/v1.2.0/cli_1.2.0_Darwin_all.tar.gz"
+    sha256 "8bf617f6cb7ceff8358d97f0607c0c2b096ad8cc7d59ddf3e46eae5b50115cb1"
 
     define_method(:install) do
       bin.install "hostodo"
@@ -19,15 +19,15 @@ class Hostodo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hostodo/cli/releases/download/v1.1.1/cli_1.1.1_Linux_x86_64.tar.gz"
-      sha256 "8071e0905e9da32d44821f860331c6dc2703b28c4496a2863222e7f29eec4491"
+      url "https://github.com/hostodo/cli/releases/download/v1.2.0/cli_1.2.0_Linux_x86_64.tar.gz"
+      sha256 "6d8116aa7a7050b8d827941c8418009f856418d735792fd56ba61e3e7832ead0"
       define_method(:install) do
         bin.install "hostodo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hostodo/cli/releases/download/v1.1.1/cli_1.1.1_Linux_arm64.tar.gz"
-      sha256 "fa76971b4c82f09e3b349072bd4e92776e9f097f72057711ee6900546c841e3a"
+      url "https://github.com/hostodo/cli/releases/download/v1.2.0/cli_1.2.0_Linux_arm64.tar.gz"
+      sha256 "b867f42a715f25014fc53a71b3bc05fb6d58b53b92f800831a5ff8677fa3b4c4"
       define_method(:install) do
         bin.install "hostodo"
       end
