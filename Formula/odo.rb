@@ -5,12 +5,12 @@
 class Odo < Formula
   desc "Official CLI for managing Hostodo VPS instances"
   homepage "https://github.com/hostodo/cli"
-  version "2.0.0"
+  version "2.0.1"
   license "MIT"
 
   on_macos do
-    url "https://github.com/hostodo/cli/releases/download/v2.0.0/cli_2.0.0_Darwin_all.tar.gz"
-    sha256 "21af9039475771fbe9a7831525c87e8d3dd8a56b6c31bc2fdc8a852c8365f6c5"
+    url "https://github.com/hostodo/cli/releases/download/v2.0.1/cli_2.0.1_Darwin_all.tar.gz"
+    sha256 "d37b0aad93a695143432451075f4bd07e74a56804bf5bb52da8ab941596f81c3"
 
     define_method(:install) do
       bin.install "odo"
@@ -20,21 +20,36 @@ class Odo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hostodo/cli/releases/download/v2.0.0/cli_2.0.0_Linux_x86_64.tar.gz"
-      sha256 "bef511b3f87ce0d5ec51f7a2457782c993cb5efe1a79549aabdf3962b55a7d04"
+      url "https://github.com/hostodo/cli/releases/download/v2.0.1/cli_2.0.1_Linux_x86_64.tar.gz"
+      sha256 "787adfbd3ffbae081f780db2433c05582e75135b81bcb499517a79d85f94cffa"
       define_method(:install) do
         bin.install "odo"
         generate_completions_from_executable(bin/"odo", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hostodo/cli/releases/download/v2.0.0/cli_2.0.0_Linux_arm64.tar.gz"
-      sha256 "d060cbe063c6195fc6951ac4522414f1b8bf6157965643a4369794c055d0afc8"
+      url "https://github.com/hostodo/cli/releases/download/v2.0.1/cli_2.0.1_Linux_arm64.tar.gz"
+      sha256 "525f61eeed70eeb3d41e233666feb020e85ec6dd8a903ddb347765fcab9fc627"
       define_method(:install) do
         bin.install "odo"
         generate_completions_from_executable(bin/"odo", "completion")
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      Shell completions have been installed. To enable them, add the following
+      to your ~/.zshrc (if not already present):
+
+        autoload -Uz compinit && compinit
+
+      Then restart your shell or run: source ~/.zshrc
+
+      For bash, add to ~/.bashrc:
+        [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && \
+          source "$(brew --prefix)/etc/profile.d/bash_completion.sh"
+    EOS
   end
 
   test do
