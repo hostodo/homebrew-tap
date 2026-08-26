@@ -5,12 +5,12 @@
 class Odo < Formula
   desc "Official CLI for managing Hostodo VPS instances"
   homepage "https://github.com/hostodo/odo-cli"
-  version "2.2.0"
+  version "2.2.1"
   license "MIT"
 
   on_macos do
-    url "https://github.com/hostodo/odo-cli/releases/download/v2.2.0/odo-cli_2.2.0_Darwin_all.tar.gz"
-    sha256 "49107e64f157388b3b6b02abef02d7c7eb7ae0634aef2b05cd1c69b11b82a3a6"
+    url "https://github.com/hostodo/odo-cli/releases/download/v2.2.1/odo-cli_2.2.1_Darwin_all.tar.gz"
+    sha256 "5b1e5f1d969d94725cbf71bcd10150279b318b9c03fcc5bded913d5333e52093"
 
     define_method(:install) do
       bin.install "odo"
@@ -20,16 +20,16 @@ class Odo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hostodo/odo-cli/releases/download/v2.2.0/odo-cli_2.2.0_Linux_x86_64.tar.gz"
-      sha256 "c2a2309ab9df01a69be2c53547e57d0131b45b0a7071f6b0877ad2f104330a9a"
+      url "https://github.com/hostodo/odo-cli/releases/download/v2.2.1/odo-cli_2.2.1_Linux_x86_64.tar.gz"
+      sha256 "097481bceddef280202862a7b0c8155358c349a186ab12cabf7d3bfd42e400b9"
       define_method(:install) do
         bin.install "odo"
         generate_completions_from_executable(bin/"odo", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hostodo/odo-cli/releases/download/v2.2.0/odo-cli_2.2.0_Linux_arm64.tar.gz"
-      sha256 "b4268adbadac9f7819617bc1064e1221a43e5fac715a766d6547ac2e5ab5caf1"
+      url "https://github.com/hostodo/odo-cli/releases/download/v2.2.1/odo-cli_2.2.1_Linux_arm64.tar.gz"
+      sha256 "557e53c3a51799d23b5cf3088c63c51a1e412e92fbe388c6581b2fb42a7c4619"
       define_method(:install) do
         bin.install "odo"
         generate_completions_from_executable(bin/"odo", "completion")
